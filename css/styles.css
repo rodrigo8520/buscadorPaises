@@ -17,3 +17,22 @@ table.a {
     
     margin: 0 auto;
   }
+
+  .cabecera {
+    height: 100px;
+ }
+
+ .cabecera h1 {
+    text-align: center;
+    line-height: 100px;
+    
+ }
+
+ .buscador {
+  
+   text-align: center;
+   margin: auto;
+   width: 60%;
+   padding: 50px;
+   
+ }
