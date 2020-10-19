@@ -10,5 +10,5 @@ $('#btnBuscar').on('click', function () {
 
 function mostrarDiv(){
     document.getElementById("mostrarTabla").style.display="block";
-    
+    alert("Hola estoy buscando ctm");
 }
