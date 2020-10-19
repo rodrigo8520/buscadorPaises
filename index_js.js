@@ -15,8 +15,14 @@ function mostrarDiv() {
     //document.getElementById("mostrarTabla").style.display="block";
     alert("Hola estoy buscando ctm");
 }   
-$(document).ready(function () {
+/*$(document).ready(function () {
     $('#btnBuscar').on('click', function () {
         $('#tabla tbody').empty()
+    });
+});*/
+
+$(document).ready(function() {
+    $("#btnBuscar").click(function(event) {
+        $("tbody").empty();
     });
 });
