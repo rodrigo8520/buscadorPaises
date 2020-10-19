@@ -7,3 +7,8 @@ $(document).ready(function () {
 $('#btnBuscar').on('click', function () {
     $('#tabla').show();
 });     */
+
+function mostrarDiv(){
+    document.getElementById("mostrarTabla").style.display="block";
+    
+}
