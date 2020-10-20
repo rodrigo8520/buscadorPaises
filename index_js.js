@@ -15,14 +15,23 @@ function mostrarDiv() {
     //document.getElementById("mostrarTabla").style.display="block";
     alert("Hola estoy buscando ctm");
 }   
+
+function abla() {
+    
+    $("#mostrarTabla").hide();
+} 
 /*$(document).ready(function () {
     $('#btnBuscar').on('click', function () {
         $('#tabla tbody').empty()
     });
 });*/
 
-$(document).ready(function() {
-    $("#btnBuscar").click(function(event) {
-        $("tbody").empty();
-    });
-});
+$(function(){
+    var caca = function(){
+    $("#mostrarTabla").hide();   
+    };
+
+    var btn = document.getElementById('btnBuscar');
+    btn.addEventListener("click", caca);
+    
+})
