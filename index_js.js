@@ -16,20 +16,12 @@ function mostrarDiv() {
     alert("Hola estoy buscando ctm");
     $("tbody").empty();
    
+    //Para agregar una linea al apretar btn buscar
    var tr ='<tr><td>'+"1"+'</td>  <td>'+"2"+'</td>  <td>'+"3"+'</td>  <td>'+"4"+'</td></tr>';
    $("tbody").append(tr);
-
-   // $("#btnBuscar").click(function(){
-
-   /*     var add = "<tr>" 
-            add+= "<td> </td>"
-            add+= "<td> </td>"
-            add+= "<td> </td>"
-            add+= "<td> </td>"
-            add+= "</tr>"
-    */
-            
-   // })
+    // Para agregar varias lineas 
+   $("tbody").before(tr, tr, tr);
+   
 
 }   
 
