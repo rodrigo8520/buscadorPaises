@@ -6,15 +6,17 @@
 });*/
 
 $(function () {
-    alert("Hola soy un mensaje");
+    //alert("Hola soy un mensaje");
 
     $("#mostrarTabla").show();
     
 });
 
-function mostrarDiv() {
+async function mostrarDiv() {
     
     alert("Hola estoy buscando ctm");
+	await consultaApi();
+	return false;
     $("tbody").empty();
    
     //Para agregar una linea al apretar btn buscar
@@ -27,36 +29,66 @@ function mostrarDiv() {
     var $tablaBody = $("#tablaBody");
 }   
 
-jQuery.ajax({
-	url: "https://restcountries.eu/rest/v2/name/aruba?fullText=true",
-	type: "GET",
-	async:false,
-	data: {
-		
-		accion: function(data){
-			var $tablaBody = $('#tablaBody');
-			$.each(data, function(i, item){
-				$tablaBody.append('<table><tr><td>'+ item.1 +'</td><td>'+ item.2 +'</td><td>'+ item.3 +'</td> <td>'+ item.4 +'</td></tr></table>');
-			})
+async function PruebaAjax(){
+	
+	//alert("hola");
+	//var a = await consultaApi();
+	$.ajax({
+		url: "ajaxPrueba.php",
+		type: "GET",
+		data: {
+			//parametros a la url
+			variableDePrueba: "asdasdasdasdasd"
+		},
+		error: function(jqXHR, textStatus, errorThrown){ 
+			// si ocurre un error en la peticion, errores 500
+				retorno = ""; 
+				sin_error = false;console.log("chupalo");
+				
+		},
+		success: function(regreso){
+			//resultado de la peticion
+			console.log(regreso);
+			$("#textoRetorno").html(regreso);
+						
 		}
+	});
+}
 
 
-		/*name: "Aruba",
-		callingCodes: "297",
-		capital: "Oranjestad",
-		region: "Americas",*/
-					
-	},
-	error: function(jqXHR, textStatus, errorThrown){ 
-			//alert("jqXHR.status: "+ jqXHR.status + "- Error Cod. 442"); 
-			retorno = ""; 
-			sin_error = false;
+async function consultaApi(){
+	console.log("chupalo");
+	$.ajax({
+		url: "https://restcountries.eu/rest/v2/name/aruba?fullText=true",
+		type: "GET",
+		async:true,
+		data: {
 			
-	},
-	success: function(regreso){
-		$("#tablaBody").text(JSON.name).append(tr)
-		//alert(regreso);
-					
-	}
-});
+			accion: function(data){
+				var $tablaBody = $('#tablaBody');
+				$.each(data, function(i, item){
+					//$tablaBody.append('<table><tr><td>'+ item.1 +'</td><td>'+ item.2 +'</td><td>'+ item.3 +'</td> <td>'+ item.4 +'</td></tr></table>');
+				})
+			}
 
+
+			/*name: "Aruba",
+			callingCodes: "297",
+			capital: "Oranjestad",
+			region: "Americas",*/
+						
+		},
+		error: function(jqXHR, textStatus, errorThrown){ 
+				//alert("jqXHR.status: "+ jqXHR.status + "- Error Cod. 442"); 
+				retorno = ""; 
+				sin_error = false;
+				
+		},
+		success: function(regreso){
+			//$("#tablaBody").text(JSON.name).append(tr);
+			//alert(regreso);
+
+						
+		}
+	});
+}
