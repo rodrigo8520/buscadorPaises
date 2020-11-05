@@ -90,7 +90,7 @@ async function EjemploAjax(){
 		success: function(regreso){
 			//resultado de la peticion
 			console.log(regreso);
-			$("#textoRetorno").html(regreso);
+			//$("#textoRetorno").html(regreso);
 
 
 						
