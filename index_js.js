@@ -45,6 +45,7 @@ async function consultaApi(){
 			}
 
 
+
 			/*name: "Aruba",
 			callingCodes: "297",
 			capital: "Oranjestad",
@@ -90,6 +91,8 @@ async function EjemploAjax(){
 			//resultado de la peticion
 			console.log(regreso);
 			$("#textoRetorno").html(regreso);
+
+
 						
 		}
 	});
