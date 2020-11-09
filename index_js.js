@@ -16,16 +16,17 @@ async function mostrarDiv() {
     
 	alert("Hola estoy buscando ctm");
 	await consultaApi();
+
 	return false;
-    $("tbody").empty();
-   
-    //Para agregar una linea al apretar btn buscar
-   var tr ='<tr><td>'+"1"+'</td>  <td>'+"2"+'</td>  <td>'+"3"+'</td>  <td>'+"4"+'</td></tr>';
-   $("tbody").append(tr);
+
+	//$("tbody").empty();
+   //Para agregar una linea al apretar btn buscar
+   //var tr ='<tr><td>'+"1"+'</td>  <td>'+"2"+'</td>  <td>'+"3"+'</td>  <td>'+"4"+'</td></tr>';
+   //$("tbody").append(tr);
     // Para agregar varias lineas 
    //$("tbody").before(tr, tr, tr);
    
-   $("tbody tr").html('<table><tr><td>1</td><td>2</td><td>3</td> <td>4</td></tr></table>');
+   //$("tbody tr").html('<table><tr><td>1</td><td>2</td><td>3</td> <td>4</td></tr></table>');
     
 }   
 
@@ -96,4 +97,60 @@ async function EjemploAjax(){
 						
 		}
 	});
+
+	$.ajax({
+		url: "ejemplo.php",
+		type: "GET",
+		data: {
+			//parametros a la url
+			variableDePrueba: 1
+		},
+		error: function(jqXHR, textStatus, errorThrown){ 
+			// si ocurre un error en la peticion, errores 500
+				retorno = ""; 
+				sin_error = false;console.log("eRRore EjemploAjax");
+				
+		},
+		success: function(regreso){
+			//resultado de la peticion
+			console.log(regreso);
+			console.log("1");
+			//$("#textoRetorno").html(regreso);
+
+
+						
+		}
+	});
+
 }
+
+/*async function mostrarDiv(){
+	
+	//alert("hola");
+	
+	$.ajax({
+		url: "ejemplo.php",
+		type: "GET",
+		data: {
+			//parametros a la url
+			variableDePrueba: "1"
+		},
+		error: function(jqXHR, textStatus, errorThrown){ 
+			// si ocurre un error en la peticion, errores 500
+				retorno = ""; 
+				sin_error = false;console.log("eRRore EjemploAjax");
+				
+		},
+		success: function(regreso){
+			//resultado de la peticion
+			console.log(regreso);
+			console.log("1");
+			//$("#textoRetorno").html(regreso);
+
+
+						
+		}
+	});
+}
+
+*/
