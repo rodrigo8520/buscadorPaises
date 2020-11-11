@@ -98,59 +98,32 @@ async function EjemploAjax(){
 		}
 	});
 
-	$.ajax({
-		url: "ejemplo.php",
-		type: "GET",
-		data: {
-			//parametros a la url
-			variableDePrueba: 1
-		},
-		error: function(jqXHR, textStatus, errorThrown){ 
-			// si ocurre un error en la peticion, errores 500
-				retorno = ""; 
-				sin_error = false;console.log("eRRore EjemploAjax");
-				
-		},
-		success: function(regreso){
-			//resultado de la peticion
-			console.log(regreso);
-			console.log("1");
-			//$("#textoRetorno").html(regreso);
-
-
-						
-		}
-	});
-
 }
 
-/*async function mostrarDiv(){
-	
-	//alert("hola");
-	
-	$.ajax({
-		url: "ejemplo.php",
-		type: "GET",
-		data: {
-			//parametros a la url
-			variableDePrueba: "1"
-		},
-		error: function(jqXHR, textStatus, errorThrown){ 
-			// si ocurre un error en la peticion, errores 500
-				retorno = ""; 
-				sin_error = false;console.log("eRRore EjemploAjax");
-				
-		},
-		success: function(regreso){
-			//resultado de la peticion
-			console.log(regreso);
-			console.log("1");
-			//$("#textoRetorno").html(regreso);
+function variablePrueba(){
+
+$.ajax({
+	url: "ejemplo.php",
+	type: "POST",
+	data: {
+		//parametros a la url
+		variableDePrueba: 1
+	},
+	error: function(jqXHR, textStatus, errorThrown){ 
+		// si ocurre un error en la peticion, errores 500
+			retorno = ""; 
+			sin_error = false;console.log("eRRore variablePrueba");
+			
+	},
+	success: function(html){
+		//resultado de la peticion
+		console.log("variablePrueba paso");
+		alert(html);
+		//$("#textoRetorno").html(regreso);
 
 
-						
-		}
-	});
+					
+	}
+});
+
 }
-
-*/

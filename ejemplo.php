@@ -5,14 +5,18 @@
     
       //$hola = $HTTP_GET_VARS ["variableDePrueba"];
       #echo "Pruebalo " + $hola;
+
       include("pagEjemplo.php");
       include("index.html");
       saludo();
 
-      
-      if (variableDePrueba == 1 ) {
-          echo "chaoooooo";
+      if($_POST['variablePrueba'] == '1') {
+        echo "";
       }
+
+      //if (variableDePrueba == 1 ) {
+     //     echo "chaoooooo";
+      //}
       
 ?>
 </div>
