@@ -104,10 +104,10 @@ function variablePrueba(){
 
 $.ajax({
 	url: "ejemplo.php",
-	type: "POST",
+	type: "GET",
 	data: {
 		//parametros a la url
-		variableDePrueba: 1
+		variableDePrueba: "1"
 	},
 	error: function(jqXHR, textStatus, errorThrown){ 
 		// si ocurre un error en la peticion, errores 500
@@ -115,10 +115,13 @@ $.ajax({
 			sin_error = false;console.log("eRRore variablePrueba");
 			
 	},
-	success: function(html){
+	success: function(regreso){
 		//resultado de la peticion
 		console.log("variablePrueba paso");
-		alert(html);
+		$("#vPrueba").html(regreso);
+		console.log(regreso);
+
+		//console.log(regreso);
 		//$("#textoRetorno").html(regreso);
 
 

@@ -7,13 +7,13 @@
       #echo "Pruebalo " + $hola;
 
       include("pagEjemplo.php");
-      include("index.html");
       saludo();
-
-      if($_POST['variablePrueba'] == '1') {
-        echo "";
-      }
-
+      
+     // if($_POST['variablePrueba'] == '1') {
+      $item1 = $_REQUEST['variableDePrueba'];
+      echo $item1;
+     // }
+      
       //if (variableDePrueba == 1 ) {
      //     echo "chaoooooo";
       //}
